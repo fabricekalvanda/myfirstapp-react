@@ -1,7 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import { Greeting } from "./Greeting";
+import { PeopleList } from "./PeopleList";
 import './App.css';
 
+const people = [{
+  name: 'Kayla',
+  age: 2,
+  hairColor: 'Black',
+}, {
+  name: 'Noella',
+  age: 26,
+  hairColor: 'blonde',
+}, {
+  name: 'Kalvin',
+  age: 29,
+  hairColor: 'brown',  
+}];
 
 function App() {
     let adjective = 'awesome';
@@ -11,7 +25,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         < Greeting name="Fabrice" numberOfMessages={79} />
-        <img src={logo} className="App-logo" alt="logo" />
+        <PeopleList people={people} />
         <p>
           This very {adjective} for me!!!
         </p>
