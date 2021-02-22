@@ -10,8 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        < Greeting person={{name:"Farice", numberOfMessages: 11 }} 
-        name="Fabrice" numberOfMessages={89} />
+        < Greeting name="Fabrice" numberOfMessages={79} />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           This very {adjective} for me!!!
