@@ -19,13 +19,14 @@ const people = [{
 
 function App() {
     let adjective = 'awesome';
-    let url = 'https://reactjs.org';
-
+    let url = 'https://reactjs.org'; 
+  
   return (
     <div className="App">
       <header className="App-header">
         < Greeting name="Fabrice" numberOfMessages={79} />
         <PeopleList people={people} />
+        <button onClick={() => alert('Hellooo!')}>Click Me!</button>
         <p>
           This very {adjective} for me!!!
         </p>
