@@ -1,4 +1,5 @@
 import React from 'react';
+import { CounterButton } from './CounterButton';
 import { Greeting } from "./Greeting";
 import { PeopleList } from "./PeopleList";
 import './App.css';
@@ -24,21 +25,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        < Greeting name="Fabrice" numberOfMessages={79} />
-        <PeopleList people={people} />
-        <button onClick={() => alert('Hellooo!')}>Click Me!</button>
-        <p>
-          This very {adjective} for me!!!
-        </p>
-
-        <a
-          className="App-link"
-          href= {url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <CounterButton />
       </header>
     </div>
   );
