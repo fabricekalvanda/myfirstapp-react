@@ -22,13 +22,20 @@ const people = [{
 function App() { 
 
     const [numberOfClicks, setNumberOfClicks] = useState(0);
-    
+    const [hideMessage, setHideMessage] = useState(false);
+
     const increment = () => setNumberOfClicks(numberOfClicks + 1);
   
   return (
     <div className="App">
       <header className="App-header">
-        <CongratulationsMessage numberOfClicks={numberOfClicks} threshold={10} />
+        {hideMessage
+          ? null
+          : <CongratulationsMessage 
+            numberOfClicks={numberOfClicks} 
+            threshold={10} 
+            onHide={() => setHideMessage(true)} />}
+        
        <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
       </header>
     </div>
