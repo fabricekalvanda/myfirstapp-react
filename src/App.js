@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CongratulationsMessage } from './CongratulationsMessage';
 import { CounterButton } from './CounterButton';
 import { Greeting } from "./Greeting";
 import { PeopleList } from "./PeopleList";
@@ -18,14 +19,17 @@ const people = [{
   hairColor: 'brown',  
 }];
 
-function App() {
-    let adjective = 'awesome';
-    let url = 'https://reactjs.org'; 
+function App() { 
+
+    const [numberOfClicks, setNumberOfClicks] = useState(0);
+    
+    const increment = () => setNumberOfClicks(numberOfClicks + 1);
   
   return (
     <div className="App">
       <header className="App-header">
-       <CounterButton />
+        <CongratulationsMessage numberOfClicks={numberOfClicks} threshold={10} />
+       <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
       </header>
     </div>
   );
