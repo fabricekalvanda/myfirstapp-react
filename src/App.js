@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage } from './pages';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage } from './pages';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import { CounterButton } from './CounterButton';
 import { Greeting } from "./Greeting";
@@ -18,19 +18,23 @@ function App() {
   
   return (
     <div className="App">
-      
       <Router>
-      <Link to="/counter">Go to Counter Page</Link>
-      <Link to="/people-list"> Go to People List Page</Link>
-        <Router path="/" exact>
-          <HomePage />
-        </Router>
-        <Router path="/counter/">
-          <CounterButtonPage />
-        </Router>
-        <Router path="/people-list">
-          <PeopleListPage />
-        </Router>
+        <Link to="/counter">Go to Counter Page</Link>
+        <Link to="/people-list"> Go to People List Page</Link>
+        <Switch>
+          <Router path="/" exact>
+            <HomePage />
+          </Router>
+          <Router path="/counter/">
+            <CounterButtonPage />
+          </Router>
+          <Router path="/people-list">
+            <PeopleListPage />
+          </Router>
+          <Route>
+            <NotFoundPage />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
