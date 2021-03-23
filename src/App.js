@@ -1,23 +1,13 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HomePage, CounterButtonPage, PeopleListPage } from './pages';
 import { CongratulationsMessage } from './CongratulationsMessage';
 import { CounterButton } from './CounterButton';
 import { Greeting } from "./Greeting";
 import { PeopleList } from "./PeopleList";
 import './App.css';
 
-const people = [{
-  name: 'Kayla',
-  age: 2,
-  hairColor: 'Black',
-}, {
-  name: 'Noella',
-  age: 26,
-  hairColor: 'blonde',
-}, {
-  name: 'Kalvin',
-  age: 29,
-  hairColor: 'brown',  
-}];
+
 
 function App() { 
 
@@ -28,16 +18,20 @@ function App() {
   
   return (
     <div className="App">
-      <header className="App-header">
-        {hideMessage
-          ? null
-          : <CongratulationsMessage 
-            numberOfClicks={numberOfClicks} 
-            threshold={10} 
-            onHide={() => setHideMessage(true)} />}
-        
-       <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
-      </header>
+      
+      <Router>
+      <Link to="/counter">Go to Counter Page</Link>
+      <Link to="/people-list"> Go to People List Page</Link>
+        <Router path="/" exact>
+          <HomePage />
+        </Router>
+        <Router path="/">
+          <CounterButtonPage />
+        </Router>
+        <Router path="/">
+          <PeopleListPage />
+        </Router>
+      </Router>
     </div>
   );
 }
