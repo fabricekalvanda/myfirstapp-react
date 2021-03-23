@@ -25,10 +25,10 @@ function App() {
         <Router path="/" exact>
           <HomePage />
         </Router>
-        <Router path="/">
+        <Router path="/counter/">
           <CounterButtonPage />
         </Router>
-        <Router path="/">
+        <Router path="/people-list">
           <PeopleListPage />
         </Router>
       </Router>
