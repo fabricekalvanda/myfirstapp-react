@@ -7,7 +7,8 @@ import
     NotFoundPage, 
     ProtectedPage, 
     ControlledFormPage,
-    UncontrolledFormPage, 
+    UncontrolledFormPage,
+    UserProfilePage, 
   } from './pages';
 import { NavBar } from './pages/NavBar';
 import { FormsNavBar } from './FormsNavBar';
@@ -39,6 +40,9 @@ function App() {
             </Router>
             <Route path="/protected">
               <ProtectedPage />
+            </Route>
+            <Route path="/user">
+              <UserProfilePage />
             </Route>
             <Route path="/forms">
               <Router>

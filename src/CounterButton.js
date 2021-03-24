@@ -4,6 +4,7 @@ export const CounterButton = ({ onIncrement, numberOfClicks }) => {
     useEffect(() => {
         console.log('useEffect function called!');
     }, []);
+    
     return (
         <>
         <p>You have clicked the button { numberOfClicks } times</p>
