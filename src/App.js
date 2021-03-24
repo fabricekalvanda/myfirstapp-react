@@ -9,10 +9,8 @@ import
     ControlledFormPage,
     UncontrolledFormPage, 
   } from './pages';
-import { CongratulationsMessage } from './CongratulationsMessage';
-import { CounterButton } from './CounterButton';
-import { Greeting } from "./Greeting";
-import { PeopleList } from "./PeopleList";
+import { NavBar } from './pages/NavBar';
+import { FormsNavBar } from './FormsNavBar';
 import './App.css';
 
 
@@ -27,31 +25,39 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link to="/counter">Go to Counter Page</Link>
-        <Link to="/people-list"> Go to People List Page</Link>
-        <Switch>
-          <Router path="/" exact>
-            <HomePage />
-          </Router>
-          <Router path="/counter/">
-            <CounterButtonPage />
-          </Router>
-          <Router path="/people-list">
-            <PeopleListPage />
-          </Router>
-          <Route path="/protected">
-            <ProtectedPage />
-          </Route>
-          <Route path="/controlled">
-            <ControlledFormPage />
-          </Route>
-          <Route path="/uncontrolled">
-            <UncontrolledFormPage />
-          </Route>
-          <Route>
-            <NotFoundPage />
-          </Route>
-        </Switch>
+        <NavBar />
+        <div className="App-header">
+          <Switch>
+            <Router path="/" exact>
+              <HomePage />
+            </Router>
+            <Router path="/counter/">
+              <CounterButtonPage />
+            </Router>
+            <Router path="/people-list">
+              <PeopleListPage />
+            </Router>
+            <Route path="/protected">
+              <ProtectedPage />
+            </Route>
+            <Route path="/forms">
+              <Router>
+                <FormsNavBar />
+                <Route path="/forms/controlled">
+                  <ControlledFormPage />
+                </Route>
+                <Route path="/forms/uncontrolled">
+                  <UncontrolledFormPage />
+                </Route>
+              </Router>
+
+            </Route>
+            <Route>
+              <NotFoundPage />
+            </Route>
+          </Switch>
+        </div>
+
       </Router>
     </div>
   );
