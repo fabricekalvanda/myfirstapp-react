@@ -8,7 +8,7 @@ import
     ProtectedPage, 
     ControlledFormPage,
     UncontrolledFormPage,
-    UserProfilePage, 
+    UserProfilePage,
   } from './pages';
 import { NavBar } from './pages/NavBar';
 import { FormsNavBar } from './FormsNavBar';
