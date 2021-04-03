@@ -14,15 +14,15 @@ export const CounterButtonPage = () => {
 
     const increment = () => setNumberOfClicks(numberOfClicks + 1);
   
-  return (
-    <>
-    <h1> Counter Button Page</h1>
-    <DisplayIf condition={!hideMessage && numberOfClicks >= 10}>
-      <CongratulationsMessage  
-        threshold={10} 
-        onHide={() => setHideMessage(true)} />
-    </DisplayIf>  
-    <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
-    </>
-  );    
+    return (
+      <>
+      <h1> Counter Button Page</h1>
+      <DisplayIf condition={!hideMessage && numberOfClicks >= 10} >
+        <CongratulationsMessage  
+          threshold={10} 
+          onHide={() => setHideMessage(true)} />
+      </DisplayIf>  
+      <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks} />
+      </>
+    );    
 }
