@@ -3,15 +3,19 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
     background-color: ${props => props.buttonColor || 'transparent'};
-    border: 4px solid white;
-    border-radius: 4px;
-    color: yellow;
+    background: linear-gradient(90deg,#0162C8,#55E7FC);
+    display: inline-block;
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 2px;
     font-weight: bold;
-    margin: 8px;
+    margin: 10px 0;
     outline: none;
-    padding: 16px;
+    padding: 12px 36px;
 `;
 
 
