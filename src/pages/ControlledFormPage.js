@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SuccessButton } from '../Button';
 
 export const ControlledFormPage = () => {
     const [name, setName] = useState('');
@@ -28,14 +29,15 @@ export const ControlledFormPage = () => {
                     value={option}
                     onChange={e => setOption(e.target.value)} />
             </div>
-            <button onClick={e => {
+            <SuccessButton 
+                onClick={e => {
                 alert(`
                     Your name is ${name},
                     your email is ${email},
                     and your option is ${option}
                 `);
                 e.preventDefault();
-            }}>Submit</button>
+            }}>Submit</SuccessButton>
         </form>
     )
 }

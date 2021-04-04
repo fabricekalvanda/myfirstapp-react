@@ -16,7 +16,7 @@ export const CounterButtonPage = () => {
   
     return (
       <>
-      <h1> Counter Button Page</h1>
+      <h1> The Counter Button Page</h1>
       <DisplayIf condition={!hideMessage && numberOfClicks >= 10} >
         <CongratulationsMessage  
           threshold={10} 

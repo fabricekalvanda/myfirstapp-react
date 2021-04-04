@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Button';
 
 export const UncontrolledFormPage = () => {
     const nameInput = React.createRef();
@@ -26,14 +27,14 @@ export const UncontrolledFormPage = () => {
                     type="text" 
                     placeholder="Option" />
             </div>
-            <button onClick={e => {
+            <Button onClick={e => {
                 alert(`
                     Your name is ${nameInput.current.value},
                     your email is ${emailInput.current.value},
                     and your option is ${optionInput.current.value}!
                 `);
                 e.preventDefault();
-            }}>Submit</button>
+            }}>Submit</Button>
         </form>
         
     )
