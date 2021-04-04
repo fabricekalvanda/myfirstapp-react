@@ -13,7 +13,7 @@ export const CounterButtonPage = () => {
     const [hideMessage, setHideMessage] = useState(false);
 
     const increment = () => setNumberOfClicks(numberOfClicks + 1);
-  
+
     return (
       <>
       <h1> The Counter Button Page</h1>
